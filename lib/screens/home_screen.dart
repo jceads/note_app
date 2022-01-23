@@ -12,17 +12,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // var db = DatabaseConnect();
-
-  // void addItem(Note note) async {
-  //   await db.insertNote(note);
-  //   setState(() {});
-  // }
-
-  // void deleteItem(Note note) async {
-  //   await db.deleteNote(note);
-  //   setState(() {});
-  // }
   var db = DatabaseConnect();
 
   void addItem(Note note) async {
@@ -49,7 +38,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ));
                 },
-                icon: Icon(Icons.add))
+                icon: const Icon(Icons.add))
           ],
         ),
         body: NoteList(
@@ -58,30 +47,3 @@ class _HomePageState extends State<HomePage> {
         ));
   }
 }
-
-/*FutureBuilder(
-        future: db.getNote(),
-        initialData: const [],
-        builder: (context, AsyncSnapshot<List> snapshot) {
-          var data = snapshot.data; // data shown as todo
-          var datalength = data!.length;
-
-          return datalength == 0
-              ? const Center(
-                  child: Text("No not here..."),
-                )
-              : GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 5,
-                    mainAxisSpacing: 5,
-                  ),
-                  itemBuilder: (context, index) => NoteCard(
-                    id: data[index].id,
-                    content: data[index].content,
-                    creationTime: data[index].creationTime,
-                    deleteFunction: deleteItem,
-                  ),
-                );
-        },
-      ),*/

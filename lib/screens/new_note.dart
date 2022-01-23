@@ -33,7 +33,7 @@ class NewNote extends StatelessWidget {
 
   AppBar appBarMethod(TextEditingController controller, BuildContext context) {
     return AppBar(
-      title: Text("Add New Note"),
+      title: const Text("Add New Note"),
       actions: [addItemButton(controller, context)],
     );
   }

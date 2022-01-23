@@ -21,18 +21,14 @@ class NoteList extends StatelessWidget {
       builder: (context, AsyncSnapshot<List> snapshot) {
         var data = snapshot.data; // data shown as todo
         var datalength = data!.length;
-        /* return snapshot.data?.length == 0
-            ? Center(
-                child: Text("ceri yok"),
-              )
-            : Text(data.toString());*/
+
         return datalength == 0
-            ? const Center(
-                child: Text("no data found"),
+            ? Center(
+                child: NoDataWidget(),
               )
             : GridView.builder(
                 itemCount: datalength,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2, crossAxisSpacing: 8, mainAxisSpacing: 8),
                 itemBuilder: (context, index) => NoteCard(
                   id: data[index].id,
@@ -41,20 +37,30 @@ class NoteList extends StatelessWidget {
                   deleteFunction: deleteFunction,
                 ),
               );
-
-        /*return datalength == 0
-            ? const Center(
-                child: Text("No note here"),
-              )
-            : ListView.builder(
-                itemCount: datalength,
-                itemBuilder: (context, index) => NoteCard(
-                      id: data[index].id,
-                      content: data[index].content,
-                      creationTime: data[index].creationTime,
-                      deleteFunction: deleteFunction,
-                    ));*/
       },
+    );
+  }
+}
+
+class NoDataWidget extends StatelessWidget {
+  String noDataText = "No note here...";
+  NoDataWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 8,
+      child: SizedBox(
+        height: 100,
+        width: 250,
+        child: Center(
+          child: Text(
+            noDataText,
+          ),
+        ),
+      ),
     );
   }
 }
