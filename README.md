@@ -4,17 +4,24 @@
 ## Getting Started
 
 Made for local database practice. 
+<p>
 What this app can:
- 1-Save note
- 2-Delete note
- 3-List your notes
+<ol>
+ <li>1-Save note</li>
+ <li>Delete note</li>
+ <li>List your notes</li>
+</ol>
+</p>
 
+<p>
 In the future maybe I can add some feature:
- -Some animations
- -Theme options(probably light and dark
- -emoji support
- 
+ <ol>
+  <li>Some animations</li>
+  <li>Theme options(probably light and dark) </li>
+  <li>emoji support</li>
+ </ol>
  Need some work for refactoring. some cleaning is must.
+</p>
 
 ## ScreenShots
 
